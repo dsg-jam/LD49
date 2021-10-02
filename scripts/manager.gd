@@ -1,17 +1,23 @@
 extends Node
 
-const Stat = preload("res://scripts/stats.gd")
-const EventLog = preload("res://scripts/event_log.gd")
-var stats = {}
-var event_logs = []
+# String -> int
+var stats := {}
+# LGameEvent[]
+var event_logs := []
 
 
 func _ready():
-	stats["military"] = Stat.new("Military")
-	stats["stability"] = Stat.new("Stability")
-	stats["money"] = Stat.new("Money")
-	stats["diplomacy"] = Stat.new("Diplomacy")
+	stats["military"] = 50
+	stats["stability"] = 50
+	stats["money"] = 50
+	stats["diplomacy"] = 50
 
+func change_stat(stat: String, change: int) -> void:
+	stats[stat] += change
+	if stats[stat] > 100:
+		stats[stat] = 100
+	if stats[stat] < 0:
+		stats[stat] = 0
 
 func create_log(event: LGameEvent) -> void:
-	event_logs.append(EventLog.new(event))
+	event_logs.append(event)

@@ -3,6 +3,7 @@ extends LGameEvent
 
 class Option:
 	var text: String
+	# String -> int (stat -> change)
 	var consequences: Dictionary
 
 	func from_dict(data: Dictionary) -> void:
@@ -12,13 +13,14 @@ class Option:
 			assert(stat is String)
 			assert(self.consequences[stat] is int)
 
+# Option[]
 var options: Array
 var chosen_option: int
 
-func execute_consequence(manager: Manager) -> void:
-	var chosen_option: Option = self.options[self.chosen_option]
-	for stat in chosen_option.consequences:
-		manager.stats[stat].change_value(chosen_option.consequences[stat])
+func execute_consequence(manager) -> void:
+	var option: Option = self.options[self.chosen_option]
+	for stat in option.consequences:
+		manager.change_stat(stat, option.consequences[stat])
 
 func from_dict(data: Dictionary) -> void:
 	.from_dict(data)

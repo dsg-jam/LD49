@@ -15,6 +15,7 @@ const RAW_DECISIONS := [
 	}
 ]
 
+# gid -> LGameDecision
 var _decisions: Dictionary
 
 func _init() -> void:
