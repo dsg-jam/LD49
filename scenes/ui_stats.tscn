@@ -1,0 +1,78 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/ui_stats.gd" type="Script" id=1]
+
+[node name="StatsContainer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatMoney" type="ProgressBar" parent="."]
+anchor_right = 0.015
+anchor_bottom = 0.107
+margin_top = 64.0
+margin_right = 190.64
+margin_bottom = 58.8
+rect_rotation = -90.0
+rect_scale = Vector2( 0.313854, 0.261811 )
+step = 1.0
+page = 10.0
+value = 10.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="StatStability" type="ProgressBar" parent="."]
+anchor_left = 0.0234375
+anchor_right = 0.0384375
+anchor_bottom = 0.107
+margin_top = 64.0
+margin_right = 190.64
+margin_bottom = 58.8
+rect_rotation = -90.0
+rect_scale = Vector2( 0.313854, 0.261811 )
+step = 1.0
+page = 10.0
+value = 10.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="StatMilitary" type="ProgressBar" parent="."]
+anchor_left = 0.046875
+anchor_right = 0.061875
+anchor_bottom = 0.107
+margin_top = 64.0
+margin_right = 190.64
+margin_bottom = 58.8
+rect_rotation = -90.0
+rect_scale = Vector2( 0.313854, 0.261811 )
+step = 1.0
+page = 10.0
+value = 10.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="StatDiplomacy" type="ProgressBar" parent="."]
+anchor_left = 0.0703125
+anchor_right = 0.0853125
+anchor_bottom = 0.107
+margin_top = 64.0
+margin_right = 190.64
+margin_bottom = 58.8
+rect_rotation = -90.0
+rect_scale = Vector2( 0.313854, 0.261811 )
+step = 1.0
+page = 10.0
+value = 10.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": true
+}
