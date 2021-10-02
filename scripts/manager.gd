@@ -24,7 +24,8 @@ func change_stat(stat: String, change: int) -> void:
 	if stats[stat] == 0:
 		# Game Over Event
 		cause_of_death = stat
-		get_tree().change_scene("res://scenes/game_over.tscn")
+		var err := get_tree().change_scene("res://scenes/game_over.tscn")
+		assert(err == OK)
 	emit_signal("value_changed", stat, stats[stat])
 
 func create_log(event: LGameEvent) -> void:

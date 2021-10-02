@@ -15,7 +15,7 @@ func setup(decision: LGameDecision) -> void:
 	label.text = decision.prompt
 
 	for child in option_container.get_children():
-		self.remove_child(child)
+		option_container.remove_child(child)
 		child.queue_free()
 
 	for i in range(decision.options.size()):
