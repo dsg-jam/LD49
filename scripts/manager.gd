@@ -8,5 +8,4 @@ func _ready():
 	stats["military"] = Stat.new("Military")
 	stats["stability"] = Stat.new("Stability")
 	stats["money"] = Stat.new("Money")
-	stats["peace"] = Stat.new("Peace")
-
+	stats["diplomacy"] = Stat.new("Diplomacy")
