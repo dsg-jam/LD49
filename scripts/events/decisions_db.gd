@@ -20,4 +20,19 @@ const RAW_DECISIONS := [{
 			"money": 5
 		}
 	}]
+}, {
+	"gid": 2,
+	"name": "The second test",
+	"prompt": "Some more stuff happened",
+	"options": [{
+		"text": "Ignore it",
+		"consequences": {
+			"stability": -100
+		}
+	}, {
+		"text": "Deal with it",
+		"consequences": {
+			"diplomacy": 20
+		}
+	}]
 }]

@@ -1,19 +1,19 @@
 extends Node
 
 signal value_changed
+signal decision_started(decision)
 
 # String -> int
-var stats := {}
+var stats := {
+	"military": 50,
+	"stability": 50,
+	"money": 50,
+	"diplomacy": 50
+}
 # LGameEvent[]
 var event_logs := []
 var cause_of_death
 
-
-func _ready():
-	stats["military"] = 50
-	stats["stability"] = 50
-	stats["money"] = 50
-	stats["diplomacy"] = 50
 
 func change_stat(stat: String, change: int) -> void:
 	stats[stat] += change
@@ -30,6 +30,16 @@ func change_stat(stat: String, change: int) -> void:
 func create_log(event: LGameEvent) -> void:
 	event_logs.append(event)
 
+func start_game() -> void:
+	self.next_round()
+
 func run_event(event: LGameEvent) -> void:
 	event.execute_consequence(self)
 	self.create_log(event)
+
+func next_round() -> void:
+	emit_signal("decision_started", 2)
+
+func finish_decision(decision: LGameDecision) -> void:
+	self.run_event(decision)
+	self.next_round()

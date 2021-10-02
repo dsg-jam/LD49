@@ -14,6 +14,10 @@ func setup(decision: LGameDecision) -> void:
 
 	label.text = decision.prompt
 
+	for child in option_container.get_children():
+		self.remove_child(child)
+		child.queue_free()
+
 	for i in range(decision.options.size()):
 		var option: LGameDecision.Option = decision.options[i]
 		var node := option_prefab.instance()
@@ -21,6 +25,8 @@ func setup(decision: LGameDecision) -> void:
 		node.setup(option)
 		var err := node.connect("pressed", self, "_on_option_pressed", [i, option])
 		assert(err == OK)
+
+	self.visible = true
 
 func setup_with_gid(gid: int) -> void:
 	self.setup(EventDatabase.get_decision_from_gid(gid))
