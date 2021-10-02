@@ -35,6 +35,9 @@ var _decisions: Dictionary
 func _init() -> void:
 	self._parse_decisions(RAW_DECISIONS)
 
+func get_decision_from_gid(gid: int) -> LGameDecision:
+	return self._decisions[gid]
+
 func _parse_decisions(data: Array) -> void:
 	self._decisions = {}
 
