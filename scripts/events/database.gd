@@ -6,9 +6,23 @@ const RAW_DECISIONS := [
 		"name": "Test",
 		"options": [
 			{
-				"text": "Option 1",
+				"text": "Let's just literally kill everyone",
 				"consequences": {
-					"military": -10
+					"military": 20,
+					"stability": -10
+				}
+			},
+			{
+				"text": "Figure it out yourselves",
+				"consequences": {
+					"military": -20,
+					"stability": 10
+				}
+			},
+			{
+				"text": "...",
+				"consequences": {
+					"money": 5
 				}
 			}
 		]
