@@ -7,7 +7,8 @@ onready var option_container := $HBoxContainer
 
 func _ready():
 	get_stats()
-	Manager.connect("value_changed", self, "_on_value_changed")
+	var err := Manager.connect("value_changed", self, "_on_value_changed")
+	assert(err == OK)
 
 func get_stats():
 	for child in option_container.get_children():

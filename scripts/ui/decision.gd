@@ -6,7 +6,6 @@ export var option_prefab: PackedScene
 
 var _decision: LGameDecision
 
-onready var event_database := get_node("/root/EventDatabase")
 onready var option_container := $HBoxContainer
 onready var label := $Label
 
@@ -25,7 +24,7 @@ func setup(decision: LGameDecision) -> void:
 		assert(err == OK)
 
 func setup_with_gid(gid: int) -> void:
-	self.setup(event_database.get_decision_from_gid(gid))
+	self.setup(EventDatabase.get_decision_from_gid(gid))
 
 func _on_option_pressed(index: int, _option: LGameDecision.Option) -> void:
 	self._decision.chosen_option = index
