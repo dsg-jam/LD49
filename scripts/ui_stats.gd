@@ -12,8 +12,7 @@ func _ready():
 
 func update_stats():
 	for child in get_children():
-		for s in child.get_children():
-			s.set_progress_texture(3)
+		pass
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
