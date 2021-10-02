@@ -1,7 +1,5 @@
-var parent: int
-var event: String #TODO: Change type accordingly
+var event: LGameEvent
 
 
-func _init(parent: int, event):
-	self.parent = parent
+func _init(event: LGameEvent):
 	self.event = event
