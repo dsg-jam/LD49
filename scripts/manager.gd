@@ -21,3 +21,7 @@ func change_stat(stat: String, change: int) -> void:
 
 func create_log(event: LGameEvent) -> void:
 	event_logs.append(event)
+
+func run_event(event: LGameEvent) -> void:
+	event.execute_consequence(self)
+	self.create_log(event)

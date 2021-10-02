@@ -1,3 +1,18 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ui/decision.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/overview.gd" type="Script" id=2]
 
 [node name="Overview" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="UI" type="Control" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Decision" parent="UI" instance=ExtResource( 1 )]
+
+[connection signal="selected" from="UI/Decision" to="." method="_on_Decision_selected"]

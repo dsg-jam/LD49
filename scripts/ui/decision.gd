@@ -1,20 +1,32 @@
 extends Control
 
+signal selected(event)
+
 export var option_prefab: PackedScene
+
+var _decision: LGameDecision
 
 onready var event_database := get_node("/root/EventDatabase")
 onready var option_container := $HBoxContainer
+onready var label := $Label
 
-func _ready() -> void:
-	self.render(event_database._decisions[1])
+func setup(decision: LGameDecision) -> void:
+	self._decision = decision
+	
+	# TODO show decision text?
+	#label.text = decision.text
 
-func render(decision: LGameDecision) -> void:
-	for option in decision.options:
+	for i in range(decision.options.size()):
+		var option: LGameDecision.Option = decision.options[i]
 		var node := option_prefab.instance()
 		option_container.add_child(node)
 		node.setup(option)
-		var err := node.connect("pressed", self, "_on_option_pressed", [option])
+		var err := node.connect("pressed", self, "_on_option_pressed", [i, option])
 		assert(err == OK)
 
-func _on_option_pressed(option: LGameDecision.Option) -> void:
-	print("pressed", option)
+func setup_with_gid(gid: int) -> void:
+	self.setup(event_database.get_decision_from_gid(gid))
+
+func _on_option_pressed(index: int, _option: LGameDecision.Option) -> void:
+	self._decision.chosen_option = index
+	emit_signal("selected", self._decision)
