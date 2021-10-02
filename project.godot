@@ -10,7 +10,7 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "LGameEvent",
-"class": "Decision",
+"class": "LGameDecision",
 "language": "GDScript",
 "path": "res://scripts/events/decision.gd"
 }, {
@@ -20,7 +20,7 @@ _global_script_classes=[ {
 "path": "res://scripts/events/event.gd"
 } ]
 _global_script_class_icons={
-"Decision": "",
+"LGameDecision": "",
 "LGameEvent": ""
 }
 
@@ -33,6 +33,7 @@ config/icon="res://assets/icon.png"
 [autoload]
 
 EventDatabase="*res://scripts/events/database.gd"
+Manager="*res://scripts/manager.gd"
 
 [physics]
 

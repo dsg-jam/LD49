@@ -24,8 +24,8 @@ func _parse_decisions(data: Array) -> void:
 	self._decisions = {}
 
 	for raw in data:
-		var decision := Decision.new()
+		var decision := LGameDecision.new()
 		decision.from_dict(raw)
 		assert(!decision.gid in self._decisions)
-		
+
 		self._decisions[decision.gid] = decision
