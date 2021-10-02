@@ -1,5 +1,7 @@
 extends Node
 
+signal value_changed
+
 # String -> int
 var stats := {}
 # LGameEvent[]
@@ -18,6 +20,7 @@ func change_stat(stat: String, change: int) -> void:
 		stats[stat] = 100
 	if stats[stat] < 0:
 		stats[stat] = 0
+	emit_signal("value_changed", stat, stats[stat])
 
 func create_log(event: LGameEvent) -> void:
 	event_logs.append(event)
