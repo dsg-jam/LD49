@@ -6,6 +6,7 @@ signal value_changed
 var stats := {}
 # LGameEvent[]
 var event_logs := []
+var cause_of_death
 
 
 func _ready():
@@ -20,6 +21,10 @@ func change_stat(stat: String, change: int) -> void:
 		stats[stat] = 100
 	if stats[stat] < 0:
 		stats[stat] = 0
+	if stats[stat] == 0:
+		# Game Over Event
+		cause_of_death = stat
+		get_tree().change_scene("res://scenes/game_over.tscn")
 	emit_signal("value_changed", stat, stats[stat])
 
 func create_log(event: LGameEvent) -> void:
