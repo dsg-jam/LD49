@@ -11,9 +11,8 @@ onready var label := $Label
 
 func setup(decision: LGameDecision) -> void:
 	self._decision = decision
-	
-	# TODO show decision text?
-	#label.text = decision.text
+
+	label.text = decision.prompt
 
 	for i in range(decision.options.size()):
 		var option: LGameDecision.Option = decision.options[i]

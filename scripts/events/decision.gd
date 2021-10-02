@@ -13,6 +13,7 @@ class Option:
 			assert(stat is String)
 			assert(self.consequences[stat] is int)
 
+var prompt: String
 # Option[]
 var options: Array
 var chosen_option: int
@@ -25,6 +26,7 @@ func execute_consequence(manager) -> void:
 func from_dict(data: Dictionary) -> void:
 	.from_dict(data)
 
+	self.prompt = data["prompt"]
 	self.options = []
 	for option in data["options"]:
 		var opt := Option.new()

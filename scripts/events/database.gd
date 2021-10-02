@@ -1,39 +1,12 @@
 extends Node
 
-const RAW_DECISIONS := [
-	{
-		"gid": 1,
-		"name": "Test",
-		"options": [
-			{
-				"text": "Let's just literally kill everyone",
-				"consequences": {
-					"military": 20,
-					"stability": -10
-				}
-			},
-			{
-				"text": "Figure it out yourselves",
-				"consequences": {
-					"military": -20,
-					"stability": 10
-				}
-			},
-			{
-				"text": "...",
-				"consequences": {
-					"money": 5
-				}
-			}
-		]
-	}
-]
+const decisions_db := preload("res://scripts/events/decisions_db.gd")
 
 # gid -> LGameDecision
 var _decisions: Dictionary
 
 func _init() -> void:
-	self._parse_decisions(RAW_DECISIONS)
+	self._parse_decisions(decisions_db.RAW_DECISIONS)
 
 func get_decision_from_gid(gid: int) -> LGameDecision:
 	return self._decisions[gid]
