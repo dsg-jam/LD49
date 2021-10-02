@@ -15,25 +15,13 @@ _global_script_classes=[ {
 "path": "res://scripts/events/decision.gd"
 }, {
 "base": "Reference",
-"class": "EventLog",
-"language": "GDScript",
-"path": "res://scripts/event_log.gd"
-}, {
-"base": "Reference",
 "class": "LGameEvent",
 "language": "GDScript",
 "path": "res://scripts/events/event.gd"
-}, {
-"base": "Reference",
-"class": "Stats",
-"language": "GDScript",
-"path": "res://scripts/stats.gd"
 } ]
 _global_script_class_icons={
 "Decision": "",
-"EventLog": "",
-"LGameEvent": "",
-"Stats": ""
+"LGameEvent": ""
 }
 
 [application]
