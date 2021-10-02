@@ -23,17 +23,11 @@ _global_script_classes=[ {
 "class": "EventLog",
 "language": "GDScript",
 "path": "res://scripts/event_log.gd"
-}, {
-"base": "Reference",
-"class": "Stats",
-"language": "GDScript",
-"path": "res://scripts/stats.gd"
 } ]
 _global_script_class_icons={
 "Decision": "",
 "Event": "",
-"EventLog": "",
-"Stats": ""
+"EventLog": ""
 }
 
 [application]
