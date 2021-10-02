@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/ui_stats.gd" type="Script" id=1]
+[ext_resource path="res://assets/stat_display/stat_display_military_full.png" type="Texture" id=2]
+[ext_resource path="res://assets/stat_display/stat_display_money_full.png" type="Texture" id=3]
+[ext_resource path="res://assets/stat_display/stat_display_military_empty.png" type="Texture" id=4]
+[ext_resource path="res://assets/stat_display/stat_display_money_empty.png" type="Texture" id=5]
+[ext_resource path="res://assets/stat_display/stat_display_stability_empty.png" type="Texture" id=6]
+[ext_resource path="res://assets/stat_display/stat_display_stability_full.png" type="Texture" id=7]
+
+[node name="StatsContainer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Military" type="TextureProgress" parent="HBoxContainer"]
+margin_right = 253.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 20.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 2 )
+fill_mode = 3
+nine_patch_stretch = true
+
+[node name="Money" type="TextureProgress" parent="HBoxContainer"]
+margin_left = 257.0
+margin_right = 510.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 20.0
+texture_under = ExtResource( 5 )
+texture_progress = ExtResource( 3 )
+fill_mode = 3
+nine_patch_stretch = true
+
+[node name="Stability" type="TextureProgress" parent="HBoxContainer"]
+margin_left = 514.0
+margin_right = 767.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 20.0
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 7 )
+fill_mode = 3
+nine_patch_stretch = true
+
+[node name="Peace" type="TextureProgress" parent="HBoxContainer"]
+margin_left = 771.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 20.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 2 )
+fill_mode = 3
+nine_patch_stretch = true
