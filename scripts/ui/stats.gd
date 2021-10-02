@@ -16,5 +16,4 @@ func get_stats():
 	print(progress_bars)
 
 func _on_value_changed(name: String, value: int):
-	print(name)
 	progress_bars[name].value = value
