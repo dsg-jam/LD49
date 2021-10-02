@@ -9,31 +9,31 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Event",
-"class": "Decision",
+"base": "LGameEvent",
+"class": "LGameDecision",
 "language": "GDScript",
 "path": "res://scripts/events/decision.gd"
 }, {
 "base": "Reference",
-"class": "Event",
+"class": "LGameEvent",
 "language": "GDScript",
 "path": "res://scripts/events/event.gd"
-}, {
-"base": "Reference",
-"class": "EventLog",
-"language": "GDScript",
-"path": "res://scripts/event_log.gd"
 } ]
 _global_script_class_icons={
-"Decision": "",
-"Event": "",
-"EventLog": ""
+"LGameDecision": "",
+"LGameEvent": ""
 }
 
 [application]
 
 config/name="LD49"
+run/main_scene="res://scenes/overview.tscn"
 config/icon="res://assets/icon.png"
+
+[autoload]
+
+EventDatabase="*res://scripts/events/database.gd"
+Manager="*res://scripts/manager.gd"
 
 [physics]
 
