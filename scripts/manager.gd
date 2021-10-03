@@ -58,13 +58,16 @@ func run_event(event: LGameEvent) -> void:
 	event.execute_consequence(self)
 	self.create_log(event)
 
+func game_won():
+	var err := get_tree().change_scene("res://scenes/game_finished.tscn")
+	assert(err == OK)
+
 func _try_next_gid() -> int:
 	# check if we should move to the next day
 	if self._day_index == -1 or self._event_index >= self._day.total_event_count():
 		self._day_index += 1
 		if self._day_index >= EventDatabase.total_days():
-			# TODO end of game
-			assert(false, "ran out of days")
+			return -2
 
 		self._day = EventDatabase.get_day(self._day_index)
 		self._event_index = 0
@@ -86,6 +89,9 @@ func next_round() -> void:
 	# find next event gid that has its requirements matched
 	while true:
 		gid = self._try_next_gid()
+		if gid == -2:
+			self.game_won()
+			return
 		if gid != -1:
 			break
 
