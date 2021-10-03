@@ -1,20 +1,44 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/ui/option.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/buttonLong_beige.png" type="Texture" id=2]
 [ext_resource path="res://assets/ui/buttonLong_beige_pressed.png" type="Texture" id=3]
+[ext_resource path="res://assets/character/general.png" type="Texture" id=4]
 
-[node name="Option" type="TextureButton"]
+[node name="Option" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( -1908.44, -184.172 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+character_portraits = {
+"general": ExtResource( 4 )
+}
+
+[node name="CharacterRect" type="TextureRect" parent="."]
+anchor_top = -2.0
+anchor_right = 1.0
+anchor_bottom = 0.7
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 expand = true
 stretch_mode = 5
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
