@@ -11,6 +11,7 @@ onready var panel := $TextureRect
 onready var label := $TextureRect/Label
 
 func setup(decision: LGameDecision) -> void:
+	panel.rect_size.y = label.rect_size.y + 20
 	self._decision = decision
 
 	label.text = decision.prompt

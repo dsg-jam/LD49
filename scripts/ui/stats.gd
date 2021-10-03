@@ -13,7 +13,6 @@ func _ready():
 func get_stats():
 	for child in option_container.get_children():
 		progress_bars[child.name.to_lower()] = child
-	print(progress_bars)
 
 func _on_value_changed(name: String, value: int):
 	progress_bars[name].value = value
