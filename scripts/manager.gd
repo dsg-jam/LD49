@@ -42,7 +42,7 @@ func check_requirements(decision: LGameDecision) -> bool:
 		# event not found in history
 		if target_event == null:
 			return false
-		if !requirement.matches(target_event):
+		if !requirement.matches(target_event, stats):
 			return false
 	return true
 

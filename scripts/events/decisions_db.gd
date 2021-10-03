@@ -28,7 +28,8 @@ const RAW_DECISIONS := [{
 	"options": [{
 		"text": "Ignore it",
 		"consequences": {
-			"stability": -100
+			"stability": -10,
+			"money": 30,
 		}
 	}, {
 		"text": "Deal with it",
@@ -42,7 +43,10 @@ const RAW_DECISIONS := [{
 	"prompt": "I don't even know anymore",
 	"requirements": [{
 		"gid": 1,
-		"option_id": "kill"
+		"option_id": "kill",
+		"min_stats": {
+			"money": 60
+		}
 	}],
 	"options": [{
 		"text": "Take the blame",
