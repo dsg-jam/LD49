@@ -9,37 +9,66 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Event",
-"class": "Decision",
+"base": "Reference",
+"class": "LGameDay",
+"language": "GDScript",
+"path": "res://scripts/events/day.gd"
+}, {
+"base": "LGameEvent",
+"class": "LGameDecision",
 "language": "GDScript",
 "path": "res://scripts/events/decision.gd"
 }, {
+"base": "LGameEvent",
+"class": "LGameEodEvent",
+"language": "GDScript",
+"path": "res://scripts/events/eod_event.gd"
+}, {
 "base": "Reference",
-"class": "Event",
+"class": "LGameEvent",
 "language": "GDScript",
 "path": "res://scripts/events/event.gd"
-}, {
-"base": "Reference",
-"class": "EventLog",
-"language": "GDScript",
-"path": "res://scripts/event_log.gd"
-}, {
-"base": "Reference",
-"class": "Stats",
-"language": "GDScript",
-"path": "res://scripts/stats.gd"
 } ]
 _global_script_class_icons={
-"Decision": "",
-"Event": "",
-"EventLog": "",
-"Stats": ""
+"LGameDay": "",
+"LGameDecision": "",
+"LGameEodEvent": "",
+"LGameEvent": ""
 }
 
 [application]
 
 config/name="LD49"
+run/main_scene="res://scenes/overview.tscn"
 config/icon="res://assets/icon.png"
+
+[autoload]
+
+EventDatabase="*res://scripts/events/database.gd"
+Manager="*res://scripts/manager.gd"
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": false,
+"flags/filter": true,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
 
 [physics]
 
