@@ -9,10 +9,20 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Reference",
+"class": "LGameDay",
+"language": "GDScript",
+"path": "res://scripts/events/day.gd"
+}, {
 "base": "LGameEvent",
 "class": "LGameDecision",
 "language": "GDScript",
 "path": "res://scripts/events/decision.gd"
+}, {
+"base": "LGameEvent",
+"class": "LGameEodEvent",
+"language": "GDScript",
+"path": "res://scripts/events/eod_event.gd"
 }, {
 "base": "Reference",
 "class": "LGameEvent",
@@ -20,7 +30,9 @@ _global_script_classes=[ {
 "path": "res://scripts/events/event.gd"
 } ]
 _global_script_class_icons={
+"LGameDay": "",
 "LGameDecision": "",
+"LGameEodEvent": "",
 "LGameEvent": ""
 }
 
