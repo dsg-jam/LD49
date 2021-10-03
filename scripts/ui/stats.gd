@@ -3,7 +3,7 @@ extends Control
 
 var progress_bars = {}
 
-onready var option_container := $HBoxContainer
+onready var option_container := $VBoxContainer/StatProgressBars
 
 func _ready():
 	get_stats()

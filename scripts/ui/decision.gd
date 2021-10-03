@@ -7,7 +7,7 @@ export var option_prefab: PackedScene
 var _decision: LGameDecision
 
 onready var option_container := $HBoxContainer
-onready var label := $Label
+onready var label := $TextureRect/Label
 
 func setup(decision: LGameDecision) -> void:
 	self._decision = decision

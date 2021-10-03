@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/stat_display/stat_display_military_full.png" type="Texture" id=1]
 [ext_resource path="res://assets/stat_display/stat_display_stability_empty.png" type="Texture" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://assets/stat_display/stat_display_military_empty.png" type="Texture" id=5]
 [ext_resource path="res://assets/stat_display/stat_display_money_full.png" type="Texture" id=6]
 [ext_resource path="res://scripts/ui/stats.gd" type="Script" id=7]
+[ext_resource path="res://assets/icon/military_icon.png" type="Texture" id=8]
+[ext_resource path="res://assets/icon/peace_icon.png" type="Texture" id=9]
+[ext_resource path="res://assets/icon/money_icon.png" type="Texture" id=10]
+[ext_resource path="res://assets/icon/stability_icon.png" type="Texture" id=11]
 
 [node name="StatsContainer" type="Control"]
 anchor_right = 1.0
@@ -16,17 +20,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatProgressBars" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 546.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Military" type="TextureProgress" parent="HBoxContainer"]
+[node name="Military" type="TextureProgress" parent="VBoxContainer/StatProgressBars"]
 margin_right = 253.0
-margin_bottom = 600.0
+margin_bottom = 546.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 value = 50.0
@@ -35,10 +48,10 @@ texture_progress = ExtResource( 1 )
 fill_mode = 3
 nine_patch_stretch = true
 
-[node name="Money" type="TextureProgress" parent="HBoxContainer"]
+[node name="Money" type="TextureProgress" parent="VBoxContainer/StatProgressBars"]
 margin_left = 257.0
 margin_right = 510.0
-margin_bottom = 600.0
+margin_bottom = 546.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 value = 50.0
@@ -47,10 +60,10 @@ texture_progress = ExtResource( 6 )
 fill_mode = 3
 nine_patch_stretch = true
 
-[node name="Stability" type="TextureProgress" parent="HBoxContainer"]
+[node name="Stability" type="TextureProgress" parent="VBoxContainer/StatProgressBars"]
 margin_left = 514.0
 margin_right = 767.0
-margin_bottom = 600.0
+margin_bottom = 546.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 value = 50.0
@@ -59,10 +72,10 @@ texture_progress = ExtResource( 3 )
 fill_mode = 3
 nine_patch_stretch = true
 
-[node name="Diplomacy" type="TextureProgress" parent="HBoxContainer"]
+[node name="Diplomacy" type="TextureProgress" parent="VBoxContainer/StatProgressBars"]
 margin_left = 771.0
 margin_right = 1024.0
-margin_bottom = 600.0
+margin_bottom = 546.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 value = 50.0
@@ -70,3 +83,52 @@ texture_under = ExtResource( 5 )
 texture_progress = ExtResource( 1 )
 fill_mode = 3
 nine_patch_stretch = true
+
+[node name="StatIcons" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 550.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+
+[node name="MilitaryIcon" type="TextureRect" parent="VBoxContainer/StatIcons"]
+margin_right = 253.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+
+[node name="MoneyIcon" type="TextureRect" parent="VBoxContainer/StatIcons"]
+margin_left = 257.0
+margin_right = 510.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 25, 25 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 6
+
+[node name="StabilityIcon" type="TextureRect" parent="VBoxContainer/StatIcons"]
+margin_left = 514.0
+margin_right = 767.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 25, 25 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 6
+
+[node name="DiplomacyIcon" type="TextureRect" parent="VBoxContainer/StatIcons"]
+margin_left = 771.0
+margin_right = 1024.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 25, 25 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
