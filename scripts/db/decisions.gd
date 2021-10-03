@@ -7,20 +7,20 @@ const RAW := [{
 		"id": "kill",
 		"consequences": {
 			"military": 20,
-			"stability": -10
-		}
+			"stability": -10,
+		},
 	}, {
 		"text": "Figure it out yourselves",
 		"consequences": {
 			"military": -20,
-			"stability": 10
-		}
+			"stability": 10,
+		},
 	}, {
 		"text": "...",
 		"consequences": {
-			"money": 5
-		}
-	}]
+			"money": 5,
+		},
+	}],
 }, {
 	"gid": 2,
 	"name": "The second test",
@@ -30,13 +30,13 @@ const RAW := [{
 		"consequences": {
 			"stability": -10,
 			"money": 30,
-		}
+		},
 	}, {
 		"text": "Deal with it",
 		"consequences": {
-			"diplomacy": 20
-		}
-	}]
+			"diplomacy": 20,
+		},
+	}],
 }, {
 	"gid": 3,
 	"name": "The third test",
@@ -44,14 +44,11 @@ const RAW := [{
 	"requirements": [{
 		"gid": 1,
 		"chosen_option_id": "kill",
-		"min_stats": {
-			"money": 60
-		}
 	}],
 	"options": [{
 		"text": "Take the blame",
 		"consequences": {
-			"stability": -50
-		}
-	}]
+			"stability": -50,
+		},
+	}],
 }]

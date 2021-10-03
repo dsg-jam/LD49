@@ -32,9 +32,6 @@ func setup(decision: LGameDecision) -> void:
 
 	self.visible = true
 
-func setup_with_gid(gid: int) -> void:
-	self.setup(EventDatabase.get_decision_from_gid(gid))
-
 func _on_option_pressed(index: int, _option: LGameDecision.Option) -> void:
 	self._decision.chosen_option = index
 	emit_signal("selected", self._decision)

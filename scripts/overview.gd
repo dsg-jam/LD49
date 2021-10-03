@@ -11,8 +11,8 @@ func _ready() -> void:
 
 	Manager.start_game()
 
-func _on_decision_started(gid: int) -> void:
-	decision.setup_with_gid(gid)
+func _on_decision_started(p_decision: LGameDecision) -> void:
+	decision.setup(p_decision)
 	
 func _on_day_changed(day: int) -> void:
 	day_label.text = "DAY %d" % (day + 1)

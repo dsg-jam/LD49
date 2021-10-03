@@ -3,6 +3,6 @@ const RAW := [{
 	"name": "The third test",
 	"description": "I don't even know anymore",
 	"consequences": {
-		"stability": 5
-	}
+		"stability": 5,
+	},
 }]
