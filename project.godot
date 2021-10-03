@@ -47,6 +47,10 @@ config/icon="res://assets/icon.png"
 EventDatabase="*res://scripts/events/database.gd"
 Manager="*res://scripts/manager.gd"
 
+[debug]
+
+gdscript/warnings/unused_class_variable=true
+
 [global]
 
 theme=false
