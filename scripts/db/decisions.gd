@@ -39,7 +39,7 @@ const RAW := [{
 			"stability": -5,
 			"military": 5,
 		},
-	},{
+	}, {
 		"text": "Ignore it.",
 		"consequences": {
 			"military": -15,
@@ -56,12 +56,12 @@ const RAW := [{
 			"money": -30,
 			"military": 20,
 		},
-	},{
+	}, {
 		"text": "Ignore this bird",
 		"id": "ignore_bird",
 		"consequences": {
 			"stability": -15,
 			"military": -25,
 		},
-	},],
+	}],
 }]
