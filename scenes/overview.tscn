@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ui/decision.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/overview.gd" type="Script" id=2]
 [ext_resource path="res://ui/stats.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/background/background_nation_combined.png" type="Texture" id=4]
+[ext_resource path="res://ui/event.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/fonts/DayX_font.tres" type="DynamicFont" id=6]
 
 [node name="UI" type="Control"]
 anchor_right = 1.0
@@ -14,6 +16,7 @@ __meta__ = {
 }
 
 [node name="bg" type="TextureRect" parent="."]
+modulate = Color( 0.572549, 0.572549, 0.572549, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 4 )
@@ -23,6 +26,10 @@ __meta__ = {
 }
 
 [node name="Decision" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[node name="Event" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [node name="StatsContainer" parent="." instance=ExtResource( 3 )]
 anchor_left = 1.0
@@ -35,7 +42,9 @@ rect_min_size = Vector2( 200, 175 )
 [node name="Day" type="Label" parent="."]
 margin_left = 25.0
 margin_top = 25.0
+custom_fonts/font = ExtResource( 6 )
 text = "DAY 1"
 valign = 2
 
 [connection signal="selected" from="Decision" to="." method="_on_Decision_selected"]
+[connection signal="acknowledged" from="Event" to="." method="_on_Event_acknowledged"]

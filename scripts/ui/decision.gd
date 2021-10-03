@@ -11,11 +11,9 @@ onready var panel := $TextureRect
 onready var label := $TextureRect/Label
 
 func setup(decision: LGameDecision) -> void:
-	panel.rect_size.y = label.rect_size.y + 20
 	self._decision = decision
 
 	label.text = decision.prompt
-
 	panel.rect_size.y = label.get_line_count() * label.get_line_height() * 2
 
 	for child in option_container.get_children():
@@ -27,7 +25,7 @@ func setup(decision: LGameDecision) -> void:
 		var node := option_prefab.instance()
 		option_container.add_child(node)
 		node.setup(option)
-		var err := node.connect("pressed", self, "_on_option_pressed", [i, option])
+		var err := node.get_child(1).connect("pressed", self, "_on_option_pressed", [i, option])
 		assert(err == OK)
 
 	self.visible = true
@@ -35,4 +33,3 @@ func setup(decision: LGameDecision) -> void:
 func _on_option_pressed(index: int, _option: LGameDecision.Option) -> void:
 	self._decision.chosen_option = index
 	emit_signal("selected", self._decision)
-

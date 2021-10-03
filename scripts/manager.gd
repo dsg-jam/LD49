@@ -20,6 +20,9 @@ var _day_index: int
 var _day: LGameDay
 var _event_index: int
 
+func _ready() -> void:
+	EventDatabase.verify_eventconsequences_with_stats(stats)
+
 func change_stat(stat: String, change: int) -> void:
 	stats[stat] += change
 	if stats[stat] > 100:
@@ -58,13 +61,16 @@ func run_event(event: LGameEvent) -> void:
 	event.execute_consequence(self)
 	self.create_log(event)
 
+func game_won():
+	var err := get_tree().change_scene("res://scenes/game_finished.tscn")
+	assert(err == OK)
+
 func _try_next_gid() -> int:
 	# check if we should move to the next day
 	if self._day_index == -1 or self._event_index >= self._day.total_event_count():
 		self._day_index += 1
 		if self._day_index >= EventDatabase.total_days():
-			# TODO end of game
-			assert(false, "ran out of days")
+			return -2
 
 		self._day = EventDatabase.get_day(self._day_index)
 		self._event_index = 0
@@ -86,8 +92,13 @@ func next_round() -> void:
 	# find next event gid that has its requirements matched
 	while true:
 		gid = self._try_next_gid()
-		if gid != -1:
-			break
+		if gid == -1:
+			continue
+		if gid == -2:
+			self.game_won()
+			return
+		# gid found
+		break
 
 	if self._day_index != previous_day_index:
 		emit_signal("day_changed", self._day_index)
