@@ -38,14 +38,14 @@ func _parse_decisions(data: Array) -> void:
 	for raw in data:
 		var decision := LGameDecision.new()
 		decision.from_dict(raw)
-		assert(!decision.gid in self._events, "gid must be unique")
+		assert(!decision.gid in self._events, "gid must be unique (duplicate %d)" % decision.gid)
 		self._events[decision.gid] = decision
 
 func _parse_eod_events(data: Array) -> void:
 	for raw in data:
 		var event := LGameEodEvent.new()
 		event.from_dict(raw)
-		assert(!event.gid in self._events, "gid must be unique")
+		assert(!event.gid in self._events, "gid must be unique (duplicate %d)" % event.gid)
 		self._events[event.gid] = event
 
 func _verify() -> void:
@@ -61,13 +61,29 @@ func _verify() -> void:
 				continue
 
 			var dependency: LGameEvent = self._events[requirement.gid]
-			assert(dependency != null, "required gid not found")
+			assert(dependency != null, "required gid %d not found" % requirement.gid)
 			if requirement.chosen_option_id:
-				assert(dependency.has_option_with_id(requirement.chosen_option_id), "required decision doesn't have the requested option")
+				assert(dependency.has_option_with_id(requirement.chosen_option_id), "required event with gid %d doesn't have the requested option %s" % [requirement.gid, requirement.chosen_option_id])
 
 	# make sure gids referenced in day have the correct type
 	for day in self._days:
 		for gid in day.decision_gids:
-			assert(self._events[gid] is LGameDecision, "gid doesn't belong to a decision event")
+			assert(self._events[gid] is LGameDecision, "gid %d doesn't belong to a decision event" % gid)
 		for gid in day.eod_event_gids:
-			assert(self._events[gid] is LGameEodEvent, "gid doesn't belong to a end-of-day event")
+			assert(self._events[gid] is LGameEodEvent, "gid %d doesn't belong to a end-of-day event" % gid)
+
+func _check_consequences(gid: int, consequences: Dictionary, stats: Dictionary) -> void:
+	for stat in consequences:
+		if not stat in stats:
+			push_error("gid %d affects an unknown stat: %s" % [gid, stat])
+		if abs(consequences[stat]) > 100:
+			push_error("gid %d changes stat %s by more than 100, which is just unnecessary" % [gid, stat])
+
+func verify_eventconsequences_with_stats(stats: Dictionary) -> void:
+	for gid in self._events:
+		var event: LGameEvent = self._events[gid]
+		if event is LGameDecision:
+			for option in event.options:
+				self._check_consequences(gid, option.consequences, stats)
+		elif event is LGameEodEvent:
+			self._check_consequences(gid, event.consequences, stats)

@@ -54,5 +54,5 @@ func from_dict(data: Dictionary) -> void:
 		var opt := Option.new()
 		opt.from_dict(option)
 		self.options.append(opt)
-	assert(self.options.size() > 0, "must provide at least one option")
+	assert(!self.options.empty(), "decision with gid %d doesn't provide any options" % self.gid)
 

@@ -20,6 +20,9 @@ var _day_index: int
 var _day: LGameDay
 var _event_index: int
 
+func _ready() -> void:
+	EventDatabase.verify_eventconsequences_with_stats(stats)
+
 func change_stat(stat: String, change: int) -> void:
 	stats[stat] += change
 	if stats[stat] > 100:
