@@ -47,6 +47,14 @@ config/icon="res://assets/icon.png"
 EventDatabase="*res://scripts/events/database.gd"
 Manager="*res://scripts/manager.gd"
 
+[global]
+
+theme=false
+
+[gui]
+
+theme/custom="res://assets/theme.tres"
+
 [importer_defaults]
 
 texture={
