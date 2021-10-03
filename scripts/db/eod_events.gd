@@ -1,8 +1,8 @@
 const RAW := [{
-	"gid": 4,
-	"name": "The third test",
-	"description": "I don't even know anymore",
+	"gid": 2,
+	"name": "Inflation",
+	"description": "An inflation hit your economy",
 	"consequences": {
-		"stability": 5,
+		"money": -25,
 	},
 }]
