@@ -1,5 +1,5 @@
 const DAY1_RAW := {
-	"decisions": [1, 2],
+	"decisions": [0, 1, 3],
 	"eod_events": [4],
 }
 
