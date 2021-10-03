@@ -19,8 +19,14 @@ func _init() -> void:
 
 	self._verify()
 
-func get_decision_from_gid(gid: int) -> LGameDecision:
-	return self._events[gid] as LGameDecision
+func get_event_from_gid(gid: int) -> LGameEvent:
+	return self._events[gid] as LGameEvent
+
+func get_day(index: int) -> LGameDay:
+	return self._days[index] as LGameDay
+
+func total_days() -> int:
+	return self._days.size()
 
 func _parse_days(data: Array) -> void:
 	for raw in data:
