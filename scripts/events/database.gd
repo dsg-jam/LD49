@@ -49,6 +49,10 @@ func _parse_eod_events(data: Array) -> void:
 		self._events[event.gid] = event
 
 func _verify() -> void:
+	# negative gids are often used as special status notifications
+	for gid in self._events:
+		assert(gid >= 0, "gid must be positive")
+
 	# verify that event requirements can be met (obviously not accounting for dependency loops)
 	for gid in self._events:
 		var event: LGameEvent = self._events[gid]

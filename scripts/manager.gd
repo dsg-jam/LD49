@@ -89,11 +89,13 @@ func next_round() -> void:
 	# find next event gid that has its requirements matched
 	while true:
 		gid = self._try_next_gid()
+		if gid == -1:
+			continue
 		if gid == -2:
 			self.game_won()
 			return
-		if gid != -1:
-			break
+		# gid found
+		break
 
 	if self._day_index != previous_day_index:
 		emit_signal("day_changed", self._day_index)
