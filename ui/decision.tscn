@@ -24,6 +24,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Option" parent="HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 0.0
+margin_right = 1024.0
+
 [node name="Label" type="Label" parent="."]
 margin_right = 40.0
 margin_bottom = 14.0

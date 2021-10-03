@@ -12,7 +12,7 @@ var stats := {
 }
 # LGameEvent[]
 var event_logs := []
-var cause_of_death
+var cause_of_death: String
 var _event_index: int
 
 
