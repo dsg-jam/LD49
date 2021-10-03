@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/ui/option.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/buttonLong_beige.png" type="Texture" id=2]
 [ext_resource path="res://assets/ui/buttonLong_beige_pressed.png" type="Texture" id=3]
 [ext_resource path="res://assets/character/general.png" type="Texture" id=4]
+[ext_resource path="res://assets/character/home_secretary.png" type="Texture" id=5]
 
 [node name="Option" type="Control"]
 anchor_right = 1.0
@@ -16,7 +17,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 character_portraits = {
-"general": ExtResource( 4 )
+"general": ExtResource( 4 ),
+"home_secretary": ExtResource( 5 )
 }
 
 [node name="CharacterRect" type="TextureRect" parent="."]

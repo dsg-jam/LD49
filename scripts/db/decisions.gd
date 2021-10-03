@@ -11,6 +11,7 @@ const RAW := [{
 		},
 	}, {
 		"text": "Start a propaganda agency",
+		"character": "home_secretary",
 		"consequences": {
 			"money": -5,
 			"stability": 5,
@@ -160,7 +161,8 @@ const RAW := [{
 		},
 	}, {
 		"text": "Open embassy in neighboring countries",
-		"character": "diplomat",
+		# TODO: diplomat
+		# "character": "diplomat",
 		"consequences": {
 			"diplomacy": 30,
 			"money": -5,
