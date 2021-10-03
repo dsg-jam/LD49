@@ -32,4 +32,10 @@ margin_top = 5.0
 margin_bottom = 175.0
 rect_min_size = Vector2( 200, 175 )
 
+[node name="Day" type="Label" parent="."]
+margin_left = 25.0
+margin_top = 25.0
+text = "DAY 1"
+valign = 2
+
 [connection signal="selected" from="Decision" to="." method="_on_Decision_selected"]
