@@ -11,11 +11,13 @@ onready var panel := $TextureRect
 onready var label := $TextureRect/Label
 
 func setup(decision: LGameDecision) -> void:
-	print(label.rect_size.y)
-	panel.rect_size.y = label.rect_size.y + 20
 	self._decision = decision
 
 	label.text = decision.prompt
+
+	print(label.get_line_height())
+
+	panel.rect_size.y = label.get_line_count() * label.get_line_height() * 2
 
 	for child in option_container.get_children():
 		option_container.remove_child(child)
@@ -37,3 +39,4 @@ func setup_with_gid(gid: int) -> void:
 func _on_option_pressed(index: int, _option: LGameDecision.Option) -> void:
 	self._decision.chosen_option = index
 	emit_signal("selected", self._decision)
+
