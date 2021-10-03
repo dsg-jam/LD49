@@ -16,8 +16,6 @@ func setup(decision: LGameDecision) -> void:
 
 	label.text = decision.prompt
 
-	print(label.get_line_height())
-
 	panel.rect_size.y = label.get_line_count() * label.get_line_height() * 2
 
 	for child in option_container.get_children():
