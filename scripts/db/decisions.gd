@@ -1,7 +1,7 @@
 const RAW := [{
 	"gid": 0,
 	"name": "Introduction",
-	"prompt": "You are the ruler of this unstable country. Your task is to lead the country through this difficult time. Make one of these decisions. But be careful, decisions can influence your stats [see the right figure]... /n Today, your minister of inner affairs made you aware, that more and more people are losing their job. Those who are now suffering are threatening to revolt against you. What will you do?",
+	"prompt": "You are the ruler of this unstable country. Your task is to lead the country through this difficult time. Make one of these decisions. But be careful, decisions can influence your stats [see the right figure]... \n Today, your minister of inner affairs made you aware, that more and more people are losing their job. Those who are now suffering are threatening to revolt against you. What will you do?",
 	"options": [{
 		"text": "Invest in infrastructure",
 		"id": "infrastructure",
