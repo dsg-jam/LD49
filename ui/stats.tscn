@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/stat_display/stat_display_military_full.png" type="Texture" id=1]
 [ext_resource path="res://assets/stat_display/stat_display_stability_empty.png" type="Texture" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://assets/icon/peace_icon.png" type="Texture" id=9]
 [ext_resource path="res://assets/icon/money_icon.png" type="Texture" id=10]
 [ext_resource path="res://assets/icon/stability_icon.png" type="Texture" id=11]
+[ext_resource path="res://assets/stat_display/stat_display_peace_full.png" type="Texture" id=12]
+[ext_resource path="res://assets/stat_display/stat_display_peace_empty.png" type="Texture" id=13]
 
 [node name="StatsContainer" type="Control"]
 anchor_right = 1.0
@@ -79,8 +81,8 @@ margin_bottom = 546.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 value = 50.0
-texture_under = ExtResource( 5 )
-texture_progress = ExtResource( 1 )
+texture_under = ExtResource( 13 )
+texture_progress = ExtResource( 12 )
 fill_mode = 3
 nine_patch_stretch = true
 
