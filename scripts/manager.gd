@@ -2,6 +2,7 @@ extends Node
 
 signal value_changed
 signal decision_started(decision)
+signal eod_event_started(event)
 signal day_changed(day)
 
 # String -> int
@@ -94,7 +95,11 @@ func next_round() -> void:
 	var event := EventDatabase.get_event_from_gid(gid)
 	if event is LGameDecision:
 		emit_signal("decision_started", event)
+	elif event is LGameEodEvent:
+		emit_signal("eod_event_started", event)
+	else:
+		push_error("event with unrecognized type: %s" % event)
 
-func finish_decision(decision: LGameDecision) -> void:
-	self.run_event(decision)
+func finish_event(event: LGameEvent) -> void:
+	self.run_event(event)
 	self.next_round()

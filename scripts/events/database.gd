@@ -60,3 +60,10 @@ func _verify() -> void:
 			assert(dependency != null, "required gid not found")
 			if requirement.chosen_option_id:
 				assert(dependency.has_option_with_id(requirement.chosen_option_id), "required decision doesn't have the requested option")
+
+	# make sure gids referenced in day have the correct type
+	for day in self._days:
+		for gid in day.decision_gids:
+			assert(self._events[gid] is LGameDecision, "gid doesn't belong to a decision event")
+		for gid in day.eod_event_gids:
+			assert(self._events[gid] is LGameEodEvent, "gid doesn't belong to a end-of-day event")

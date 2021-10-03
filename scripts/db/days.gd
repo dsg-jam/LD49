@@ -1,6 +1,6 @@
 const DAY1_RAW := {
 	"decisions": [1, 2],
-	"eod_events": [],
+	"eod_events": [4],
 }
 
 const DAY2_RAW := {
