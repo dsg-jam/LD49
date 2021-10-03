@@ -1,6 +1,7 @@
 extends Node
 
-onready var decision := $Decision
+onready var event_display := $Event
+onready var decision_display := $Decision
 onready var day_label := $Day
 
 func _ready() -> void:
@@ -11,18 +12,23 @@ func _ready() -> void:
 	err = Manager.connect("day_changed", self, "_on_day_changed")
 	assert(err == OK)
 
+	event_display.visible = false
+	decision_display.visible = false
 	Manager.start_game()
-
-func _on_decision_started(p_decision: LGameDecision) -> void:
-	decision.setup(p_decision)
-
-func _on_eod_event_started(event: LGameEodEvent) -> void:
-	print("WE NEED TO DISPLAY THIS EVENT TO THE USER: ", event)
-	Manager.finish_event(event)
 
 func _on_day_changed(day: int) -> void:
 	day_label.text = "DAY %d" % (day + 1)
 
+func _on_decision_started(p_decision: LGameDecision) -> void:
+	decision_display.setup(p_decision)
+
 func _on_Decision_selected(p_decision: LGameDecision) -> void:
-	decision.visible = false
+	decision_display.visible = false
 	Manager.finish_event(p_decision)
+
+func _on_eod_event_started(event: LGameEodEvent) -> void:
+	event_display.setup(event)
+
+func _on_Event_acknowledged(event: LGameEodEvent) -> void:
+	event_display.visible = false
+	Manager.finish_event(event)

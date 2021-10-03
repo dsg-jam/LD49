@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/ui/buttonLong_beige.png" type="Texture" id=2]
 [ext_resource path="res://assets/ui/buttonLong_beige_pressed.png" type="Texture" id=3]
 
-[node name="TextureButton" type="TextureButton"]
+[node name="Option" type="TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( -1908.44, -184.172 )
