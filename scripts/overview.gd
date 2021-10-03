@@ -1,6 +1,6 @@
-extends Node2D
+extends Node
 
-onready var decision := $UI/Decision
+onready var decision := $Decision
 
 func _ready() -> void:
 	var err := Manager.connect("decision_started", self, "_on_decision_started")
