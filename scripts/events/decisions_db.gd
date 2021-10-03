@@ -4,6 +4,7 @@ const RAW_DECISIONS := [{
 	"prompt": "Oh lord, stuff happened and now some more stuff happenend. What will you do?",
 	"options": [{
 		"text": "Let's just literally kill everyone",
+		"id": "kill",
 		"consequences": {
 			"military": 20,
 			"stability": -10
@@ -33,6 +34,20 @@ const RAW_DECISIONS := [{
 		"text": "Deal with it",
 		"consequences": {
 			"diplomacy": 20
+		}
+	}]
+}, {
+	"gid": 3,
+	"name": "The third test",
+	"prompt": "I don't even know anymore",
+	"requirements": [{
+		"gid": 1,
+		"option_id": "kill"
+	}],
+	"options": [{
+		"text": "Take the blame",
+		"consequences": {
+			"stability": -50
 		}
 	}]
 }]
