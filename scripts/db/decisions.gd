@@ -1,4 +1,4 @@
-const RAW_DECISIONS := [{
+const RAW := [{
 	"gid": 1,
 	"name": "The first test",
 	"prompt": "Oh lord, stuff happened and now some more stuff happenend. What will you do?",
@@ -43,7 +43,7 @@ const RAW_DECISIONS := [{
 	"prompt": "I don't even know anymore",
 	"requirements": [{
 		"gid": 1,
-		"option_id": "kill",
+		"chosen_option_id": "kill",
 		"min_stats": {
 			"money": 60
 		}
