@@ -25,7 +25,7 @@ func setup(decision: LGameDecision) -> void:
 		var node := option_prefab.instance()
 		option_container.add_child(node)
 		node.setup(option)
-		var err := node.connect("pressed", self, "_on_option_pressed", [i, option])
+		var err := node.get_child(1).connect("pressed", self, "_on_option_pressed", [i, option])
 		assert(err == OK)
 
 	self.visible = true
