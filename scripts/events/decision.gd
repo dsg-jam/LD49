@@ -4,6 +4,7 @@ extends LGameEvent
 class Option:
 	var id: String
 	var text: String
+	var character: String
 	# String -> int (stat -> change)
 	var consequences: Dictionary
 
@@ -13,6 +14,11 @@ class Option:
 		else:
 			self.id = ""
 		self.text = data["text"] as String
+		if "character" in data:
+			self.character = data["character"] as String
+		else:
+			self.character = ""
+
 		self.consequences = data["consequences"]
 		for stat in self.consequences:
 			assert(stat is String)

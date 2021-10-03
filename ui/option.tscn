@@ -15,6 +15,9 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+character_portraits = {
+"general": ExtResource( 4 )
+}
 
 [node name="CharacterRect" type="TextureRect" parent="."]
 anchor_left = 0.5

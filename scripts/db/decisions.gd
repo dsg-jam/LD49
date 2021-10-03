@@ -11,6 +11,7 @@ const RAW := [{
 		},
 	}, {
 		"text": "Figure it out yourselves",
+		"character": "general",
 		"consequences": {
 			"military": -20,
 			"stability": 10,
