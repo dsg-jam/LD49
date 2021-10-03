@@ -2,6 +2,7 @@ extends Node
 
 signal value_changed
 signal decision_started(decision)
+signal day_changed(day)
 
 # String -> int
 var stats := {
@@ -13,6 +14,7 @@ var stats := {
 # LGameEvent[]
 var event_logs := []
 var cause_of_death: String
+var _day_index: int
 var _event_index: int
 
 
@@ -47,6 +49,9 @@ func check_requirements(decision: LGameDecision) -> bool:
 	return true
 
 func start_game() -> void:
+	self._day_index = 0
+	emit_signal("day_changed", self._day_index)
+
 	self._event_index = -1
 	self.next_round()
 

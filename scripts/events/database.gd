@@ -1,7 +1,5 @@
 extends Node
 
-const EVENT_ORDER := [1, 2, 3]
-
 const DecisionsDb := preload("res://scripts/db/decisions.gd")
 const EodEventsDb := preload("res://scripts/db/eod_events.gd")
 const DaysDb := preload("res://scripts/db/days.gd")
@@ -12,6 +10,9 @@ var _events: Dictionary
 var _days: Array
 
 func _init() -> void:
+	self._days = []
+	self._parse_days(DaysDb.RAW)
+	
 	self._events = {}
 	self._parse_decisions(DecisionsDb.RAW)
 	self._parse_eod_events(EodEventsDb.RAW)
@@ -20,6 +21,12 @@ func _init() -> void:
 
 func get_decision_from_gid(gid: int) -> LGameDecision:
 	return self._events[gid] as LGameDecision
+
+func _parse_days(data: Array) -> void:
+	for raw in data:
+		var day := LGameDay.new()
+		day.from_dict(raw)
+		self._days.append(day)
 
 func _parse_decisions(data: Array) -> void:
 	for raw in data:
