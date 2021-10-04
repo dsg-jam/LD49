@@ -5,12 +5,14 @@ signal decision_started(decision)
 signal eod_event_started(event)
 signal day_changed(day)
 
+const INITIAL_VALUE = 50 
+
 # String -> int
 var stats := {
-	"military": 50,
-	"stability": 50,
-	"money": 50,
-	"diplomacy": 50
+	"military": INITIAL_VALUE,
+	"stability": INITIAL_VALUE,
+	"money": INITIAL_VALUE,
+	"diplomacy": INITIAL_VALUE
 }
 # LGameEvent[]
 var event_logs := []
@@ -55,6 +57,13 @@ func check_requirements(p_event: LGameEvent) -> bool:
 
 func start_game() -> void:
 	self._day_index = -1
+	stats = {
+		"military": INITIAL_VALUE,
+		"stability": INITIAL_VALUE,
+		"money": INITIAL_VALUE,
+		"diplomacy": INITIAL_VALUE
+	}
+	event_logs = []
 	self.next_round()
 
 func run_event(event: LGameEvent) -> void:
@@ -64,14 +73,6 @@ func run_event(event: LGameEvent) -> void:
 func game_won():
 	var err := get_tree().change_scene("res://scenes/game_finished.tscn")
 	assert(err == OK)
-	
-func restart():	
-	stats = {
-		"military": 50,
-		"stability": 50,
-		"money": 50,
-		"diplomacy": 50
-	}
 
 func _try_next_gid() -> int:
 	# check if we should move to the next day
