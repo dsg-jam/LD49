@@ -8,7 +8,7 @@ var death_notes = {
 	"stability": "Your nation was too unstable, I'm sorry..."
 }
 
-onready var death_note = $VBoxContainer/DeathNote
+onready var death_note = $TextureRect/DeathNote
 
 func _ready():
 	death_note.text = death_notes[Manager.cause_of_death]
