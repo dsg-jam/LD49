@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/ui/option.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/buttonLong_beige.png" type="Texture" id=2]
 [ext_resource path="res://assets/ui/buttonLong_beige_pressed.png" type="Texture" id=3]
 [ext_resource path="res://assets/character/general.png" type="Texture" id=4]
 [ext_resource path="res://assets/character/home_secretary.png" type="Texture" id=5]
+[ext_resource path="res://assets/character/financier.png" type="Texture" id=6]
 
 [node name="Option" type="Control"]
 anchor_right = 1.0
@@ -17,6 +18,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 character_portraits = {
+"financier": ExtResource( 6 ),
 "general": ExtResource( 4 ),
 "home_secretary": ExtResource( 5 )
 }

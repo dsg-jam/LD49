@@ -28,12 +28,14 @@ const RAW := [{
 	"prompt": "Your best Diplomat comes to you and explains, that the leader of the country in the east (blue) has made you an ultimatum to pay back your long-lasting dept. He threatens to set sanctions on all trades concerning military equipment in place.",
 	"options": [{
 		"text": "Start paying back some of your dept.",
+		"character": "financier",
 		"consequences": {
 			"diplomacy": 5,
 			"money": -30,
 		},
 	}, {
 		"text": "Increase military personnel on the boarder to the blue country.",
+		"character": "general",
 		"consequences": {
 			"diplomacy": -20,
 			"money": -5,
@@ -90,6 +92,7 @@ const RAW := [{
 	}],
 	"options": [{
 		"text": "take it",
+		"character": "financier",
 		"consequences": {
 			"money": 5,
 			"stability": 5,
@@ -111,6 +114,7 @@ const RAW := [{
 	}],
 	"options": [{
 		"text": "Rebuild your army",
+		"character": "general",
 		"consequences": {
 			"military": 20,
 			"money": -35,
