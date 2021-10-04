@@ -4,6 +4,7 @@ signal value_changed
 signal decision_started(decision)
 signal eod_event_started(event)
 signal day_changed(day)
+signal event_log_updated(event)
 
 const INITIAL_VALUE = 50 
 
@@ -40,6 +41,7 @@ func change_stat(stat: String, change: int) -> void:
 
 func create_log(event: LGameEvent) -> void:
 	event_logs.append(event)
+	emit_signal("event_log_updated", event)
 
 func check_requirements(p_event: LGameEvent) -> bool:
 	for requirement in p_event.requirements:
