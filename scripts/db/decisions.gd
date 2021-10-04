@@ -1,7 +1,7 @@
 const RAW := [{
 	"gid": 0,
 	"name": "Introduction",
-	"prompt": "You are the ruler of this unstable country. Your task is to lead the country through this difficult time. Make one of these decisions. But be careful, decisions can influence your stats [see the right figure]... \n Today, your minister of inner affairs made you aware, that more and more people are losing their job. Those who are now suffering are threatening to revolt against you. What will you do?",
+	"prompt": "You are the ruler of this unstable country. Your task is to lead the country through this difficult time. Make one of these decisions. But be careful, decisions can influence your stats [see the right figure]...\n\nToday, your minister of inner affairs made you aware, that more and more people are losing their job. Those who are now suffering are threatening to revolt against you. What will you do?",
 	"options": [{
 		"text": "Invest in infrastructure",
 		"id": "infrastructure",
@@ -19,13 +19,13 @@ const RAW := [{
 	}, {
 		"text": "Ignore for now",
 		"consequences": {
-			"stability": -5,
+			"stability": -15,
 		},
 	}],
 }, {
 	"gid": 1,
-	"name": "military at the blue border",
-	"prompt": "Your best Diplomat comes to you and explains, that the leader of the country in the east (blue) has made you an ultimatum to pay back your long-lasting dept. He threatens to set sanctions on all trades concerning military equipment in place.",
+	"name": "Military at the blue border",
+	"prompt": "Your best Diplomat comes to you and explains that the leader of the country in the east (blue) has given you an ultimatum to pay back your long-lasting dept. They threaten to set sanctions on all trades concerning military equipment.",
 	"options": [{
 		"text": "Start paying back some of your dept.",
 		"character": "financier",
@@ -40,7 +40,7 @@ const RAW := [{
 			"diplomacy": -20,
 			"money": -5,
 			"stability": -5,
-			"military": 5,
+			"military": 10,
 		},
 	}, {
 		"text": "Ignore it.",
@@ -61,7 +61,7 @@ const RAW := [{
 			"military": 20,
 		},
 	}, {
-		"text": "Ignore this bird",
+		"text": "Ignore the bird",
 		"id": "ignore_bird",
 		"consequences": {
 			"stability": -15,
@@ -73,7 +73,7 @@ const RAW := [{
 	"name": "Strategy leadership summit",
 	"prompt": "Organize a big fancy event and invite all the neighboring leaders with their diplomats.",
 	"options": [{
-		"text": "of course",
+		"text": "Of course",
 		"id": "accept",
 		"consequences": {
 			"money": -5,
@@ -91,14 +91,14 @@ const RAW := [{
 		"chosen_option_id": "infrastructure",
 	}],
 	"options": [{
-		"text": "take it",
-		"character": "financier",
+		"text": "Take it",
 		"consequences": {
 			"money": 5,
 			"stability": 5,
 		},
 	}, {
-		"text": "double down",
+		"text": "Double down",
+		"character": "financier",
 		"consequences": {
 			"money": -5,
 			"stability": 6,
@@ -122,7 +122,7 @@ const RAW := [{
 	}],
 }, {
 	"gid": 7,
-	"name": "trade that agreement",
+	"name": "Trade that agreement",
 	"prompt": "Country in the South (red) proposes to make a trade agreement.",
 	"options": [{
 		"text": "Sign it now!",
@@ -132,14 +132,14 @@ const RAW := [{
 			"money": 1,
 		},
 	}, {
-		"text": "renegotiate",
+		"text": "Let's pull them over the table!",
 		"consequences": {
 			"stability": -3,
 			"diplomacy": -5,
 			"money": -1,
 		},
 	}, {
-		"text": "never!",
+		"text": "Never!",
 		"consequences": {
 			"diplomacy": -5,
 		},
@@ -202,7 +202,7 @@ const RAW := [{
 }, {
 	"gid": 10,
 	"name": "Earthquake warning",
-	"prompt": "The International Earthquake Warning System (IEWS) has issued a warning for the region northeast of your country. Stay on guard! Do you want to warn the population and evacuate the region?",
+	"prompt": "The International Earthquake Warning System (IEWS) has issued a warning for the northeast region of your country. Stay on guard! Do you want to warn the population and evacuate the region?",
 	"options": [{
 		"text": "Yes! But hurry up!",
 		"character": "general",

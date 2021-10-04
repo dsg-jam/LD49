@@ -31,7 +31,7 @@ const RAW := [{
 }, {
 	"gid": 13,
 	"name": "Climate strike",
-	"description": "Many workers strike for two days because you ignored the climate demo.",
+	"description": "Strikes went on for two days because you ignored the climate demo.",
 	"requirements": [{
 		"gid": 9,
 		"chosen_option_id": "idc",
@@ -42,7 +42,7 @@ const RAW := [{
 }, {
 	"gid": 14,
 	"name": "Climate crisis",
-	"description": "Since you expelled the protesters, many people have lost confidence in you (as if there ever was). Well, now you have to see how you can fix it.",
+	"description": "Since you expelled the protesters, many people have lost confidence in you (as if they ever had any). Well, now you have to see how you can fix it.",
 	"requirements": [{
 		"gid": 9,
 		"chosen_option_id": "expel",
