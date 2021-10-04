@@ -168,4 +168,48 @@ const RAW := [{
 			"money": -5,
 		},
 	}],
+}, {
+	"gid": 9,
+	"name": "Climate demo",
+	"prompt": "People are gathering in the streets of major cities to demonstrate against your non-existent climate policy. Take action before this escalates!",
+	"requirements": [{
+		"min_stats": {
+			"stability": 70,
+		},
+	}],
+	"options": [{
+		"text": "I don't care",
+		"id": "idc",
+		"consequences": {},
+	}, {
+		"text": "Expel the protesters",
+		"character": "general",
+		"id": "expel",
+		"consequences": {
+			"military": -2,
+		},
+	}, {
+		"text": "Set up a climate policy",
+		"character": "home_secretary",
+		"id": "policy",
+		"consequences": {
+			"money": -5,
+		},
+	}],
+}, {
+	"gid": 10,
+	"name": "Earthquake warning",
+	"prompt": "The International Earthquake Warning System (IEWS) has issued a warning for the region northeast of your country. Stay on guard! Do you want to warn the population and evacuate the region?",
+	"options": [{
+		"text": "Yes! But hurry up!",
+		"character": "general",
+		"id": "yes",
+		"consequences": {
+			"money": -10,
+		},
+	}, {
+		"text": "Nope!",
+		"id": "no",
+		"consequences": {},
+	}],
 }]

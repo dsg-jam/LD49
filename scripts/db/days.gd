@@ -1,6 +1,6 @@
 const DAY1_RAW := {
 	"decisions": [0, 1, 3, 4],
-	"eod_events": [2],
+	"eod_events": [],
 }
 
 const DAY2_RAW := {
@@ -8,7 +8,19 @@ const DAY2_RAW := {
 	"eod_events": [],
 }
 
+const DAY3_RAW := {
+	"decisions": [9, 10],
+	"eod_events": [11, 2],
+}
+
+const DAY4_RAW := {
+	"decisions": [],
+	"eod_events": [12, 13, 14, 15],
+}
+
 const RAW := [
 	DAY1_RAW,
 	DAY2_RAW,
+	DAY3_RAW,
+	DAY4_RAW,
 ]
