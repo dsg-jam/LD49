@@ -38,7 +38,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="LD49"
+config/name="Risky Rule"
+config/description="Play the most intense game of chess you've ever played. Chess with decisions that are absolutely unrelated to anything that might happen in chess, that is."
 run/main_scene="res://scenes/overview.tscn"
 config/icon="res://assets/icon.png"
 
