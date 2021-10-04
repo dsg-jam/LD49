@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/fonts/DayX_font.tres" type="DynamicFont" id=6]
 [ext_resource path="res://ui/event_log.tscn" type="PackedScene" id=7]
 
-[node name="UI" type="Control"]
+[node name="Overview" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
@@ -28,26 +28,32 @@ __meta__ = {
 
 [node name="Control" parent="." instance=ExtResource( 7 )]
 
-[node name="Decision" parent="." instance=ExtResource( 1 )]
-visible = false
+[node name="Margins" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 18.0
+margin_right = -32.0
+margin_bottom = -36.0
 
-[node name="Event" parent="." instance=ExtResource( 5 )]
-visible = false
-
-[node name="StatsContainer" parent="." instance=ExtResource( 3 )]
-anchor_left = 1.0
-anchor_bottom = 0.0
-margin_left = -200.0
-margin_top = 5.0
-margin_bottom = 175.0
-rect_min_size = Vector2( 200, 175 )
-
-[node name="Day" type="Label" parent="."]
-margin_left = 25.0
-margin_top = 25.0
+[node name="Day" type="Label" parent="Margins"]
 custom_fonts/font = ExtResource( 6 )
 text = "DAY 1"
 valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[connection signal="selected" from="Decision" to="." method="_on_Decision_selected"]
-[connection signal="acknowledged" from="Event" to="." method="_on_Event_acknowledged"]
+[node name="Decision" parent="Margins" instance=ExtResource( 1 )]
+visible = false
+
+[node name="Event" parent="Margins" instance=ExtResource( 5 )]
+
+[node name="StatsContainer" parent="Margins" instance=ExtResource( 3 )]
+anchor_left = 1.0
+anchor_bottom = 0.0
+grow_horizontal = 0
+rect_min_size = Vector2( 200, 200 )
+
+[connection signal="selected" from="Margins/Decision" to="." method="_on_Decision_selected"]
+[connection signal="acknowledged" from="Margins/Event" to="." method="_on_Event_acknowledged"]

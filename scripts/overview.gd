@@ -1,8 +1,8 @@
 extends Node
 
-onready var event_display := $Event
-onready var decision_display := $Decision
-onready var day_label := $Day
+onready var event_display := $Margins/Event
+onready var decision_display := $Margins/Decision
+onready var day_label := $Margins/Day
 
 func _ready() -> void:
 	var err := Manager.connect("decision_started", self, "_on_decision_started")
