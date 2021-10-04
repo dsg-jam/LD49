@@ -98,6 +98,7 @@ const RAW := [{
 		},
 	}, {
 		"text": "Double down",
+		"id": "dd",
 		"character": "financier",
 		"consequences": {
 			"money": -5,
@@ -212,6 +213,29 @@ const RAW := [{
 		},
 	}, {
 		"text": "Nope!",
+		"id": "no",
+		"consequences": {},
+	}],
+}, {
+	"gid":16,
+	"name": "New Airport",
+	"prompt": "As the issue of globalization arises around the world, the question now is whether you want to build an airport.",
+	"requirements": [{
+		"min_stats": {
+			"money": 40,
+			"stability": 30,
+		},
+	}],
+	"options": [{
+		"text": "Yes, please",
+		"character": "diplomat",
+		"id": "yes",
+		"consequences": {
+			"money": -7,
+			"diplomacy": 4,
+		},
+	}, {
+		"text": "No",
 		"id": "no",
 		"consequences": {},
 	}],

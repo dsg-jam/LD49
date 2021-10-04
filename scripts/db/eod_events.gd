@@ -60,8 +60,57 @@ const RAW := [{
 		"chosen_option_id": "policy",
 	}],
 	"consequences": {
-		"stability": +15,
+		"stability": 15,
 		"money": -5,
 		"diplomacy": -2,
+	}
+}, {
+	"gid": 17,
+	"name": "Money, money, money",
+	"description": "An anonymous organization donates some money to your country, for public reasons.",
+	"requirements": [{
+		"min_stats": {
+			"money": 10,
+		},
+	}],
+	"consequences": {
+		"money": 35,
+	}
+}, {
+	"gid": 18,
+	"name": "Payday",
+	"description": "The investment in infrastructure has really paid off, enjoy your success.",
+	"requirements": [{
+		"gid": 5,
+		"chosen_option_id": "dd",
+	}],
+	"consequences": {
+		"stability": 4,
+		"money": 10,
+	}
+}, {
+	"gid": 19,
+	"name": "Airport dilemma",
+	"description": "Since you didn't want to build an airport, all passengers now travel to the blue country to catch a flight.",
+	"requirements": [{
+		"gid": 16,
+		"chosen_option_id": "no",
+	}],
+	"consequences": {
+		"money": -2,
+		"diplomacy": 1,
+	}
+}, {
+	"gid": 20,
+	"name": "Airport success",
+	"description": "Due to the construction of the airport and the great popularity of it, the airport became a large hub. Furthermore, the country became an interesting destination for many foreign tourists.",
+	"requirements": [{
+		"gid": 16,
+		"chosen_option_id": "yes",
+	}],
+	"consequences": {
+		"stability": 4,
+		"money": 10,
+		"diplomacy": 1,
 	}
 }]
