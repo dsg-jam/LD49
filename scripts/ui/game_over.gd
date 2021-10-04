@@ -12,3 +12,9 @@ onready var death_note = $VBoxContainer/DeathNote
 
 func _ready():
 	death_note.text = death_notes[Manager.cause_of_death]
+
+
+func _on_TextureButton_pressed():
+	var err := get_tree().change_scene("res://scenes/overview.tscn")
+	assert(err == OK)
+	Manager.restart()

@@ -64,6 +64,14 @@ func run_event(event: LGameEvent) -> void:
 func game_won():
 	var err := get_tree().change_scene("res://scenes/game_finished.tscn")
 	assert(err == OK)
+	
+func restart():	
+	stats = {
+		"military": 50,
+		"stability": 50,
+		"money": 50,
+		"diplomacy": 50
+	}
 
 func _try_next_gid() -> int:
 	# check if we should move to the next day
