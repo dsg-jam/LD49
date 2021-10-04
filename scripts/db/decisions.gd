@@ -165,8 +165,7 @@ const RAW := [{
 		},
 	}, {
 		"text": "Open embassy in neighboring countries",
-		# TODO: diplomat
-		# "character": "diplomat",
+		"character": "diplomat",
 		"consequences": {
 			"diplomacy": 30,
 			"money": -5,
